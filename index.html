@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <title>BorderRadius - Generator</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        textarea {
+            resize: none;
+        }
+
+        .border-radius {
+            width: 200px;
+            height: 200px;
+            border: 3px solid #000000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">BorderRadius - Generator</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="https://leopersan.github.io/">LeoPersan</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="https://github.com/LeoPersan/">GitHub</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="mt-5">Utilize os campos abaixo para gerar o código CSS border-radius.</h1>
+                <p class="lead">1cm, 10mm, 0.1in, 1.1px, 100pt, 0.01pc, 1em, 1ex, 1ch, 1rem, 1vw, 1vh, 1vmin, 1vmax, 1%</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <ul class="nav nav-tabs nav-fill" id="parameters" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="oneParameter-tab" data-toggle="tab" href="#oneParameter"
+                                    role="tab" aria-controls="oneParameter" aria-selected="true">1 Valor</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="twoParameters-tab" data-toggle="tab" href="#twoParameters"
+                                    role="tab" aria-controls="twoParameters" aria-selected="false">2 Valores</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="fourParameters-tab" data-toggle="tab" href="#fourParameters"
+                                    role="tab" aria-controls="fourParameters" aria-selected="false">4 Valores</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="eightParameters-tab" data-toggle="tab" href="#eightParameters"
+                                    role="tab" aria-controls="eightParameters" aria-selected="false">8 Valores</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="parametersContent">
+                            <div class="row tab-pane fade show active" id="oneParameter" role="tabpanel"
+                                aria-labelledby="oneParameter-tab">
+                                <div class="form-group col-12">
+                                    <input type="text" class="form-control parameter" placeholder="Geral">
+                                </div>
+                            </div>
+                            <div class="row tab-pane fade" id="twoParameters" role="tabpanel"
+                                aria-labelledby="twoParameters-tab">
+                                <div class="row">
+                                    <div class="form-group col-sm-6">
+                                        <input type="text" class="form-control parameter" placeholder="Esq Sup + Dir Inf">
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <input type="text" class="form-control parameter" placeholder="Dir Sup + Esq Inf">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row tab-pane fade" id="fourParameters" role="tabpanel"
+                                aria-labelledby="fourParameters-tab">
+                                <div class="row">
+                                    <div class="form-group col-sm-6 col-lg-3">
+                                        <input type="text" class="form-control parameter" placeholder="Esq Sup">
+                                    </div>
+                                    <div class="form-group col-sm-6 col-lg-3">
+                                        <input type="text" class="form-control parameter" placeholder="Dir Sup">
+                                    </div>
+                                    <div class="form-group col-sm-6 col-lg-3">
+                                        <input type="text" class="form-control parameter" placeholder="Dir Inf">
+                                    </div>
+                                    <div class="form-group col-sm-6 col-lg-3">
+                                        <input type="text" class="form-control parameter" placeholder="Esq Inf">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="eightParameters" role="tabpanel"
+                                aria-labelledby="eightParameters-tab">
+                                <div class="row">
+                                    <div class="form-group col-sm-6 col-lg-3">
+                                        <input type="text" class="form-control parameter" placeholder="Esq Sup Sup">
+                                    </div>
+                                    <div class="form-group col-sm-6 col-lg-3">
+                                        <input type="text" class="form-control parameter" placeholder="Dir Sup Sup">
+                                    </div>
+                                    <div class="form-group col-sm-6 col-lg-3">
+                                        <input type="text" class="form-control parameter" placeholder="Dir Inf Inf">
+                                    </div>
+                                    <div class="form-group col-sm-6 col-lg-3">
+                                        <input type="text" class="form-control parameter" placeholder="Esq Inf Inf">
+                                    </div>
+                                    <div class="form-group col-sm-6 col-lg-3">
+                                        <input type="text" class="form-control parameter" placeholder="Esq Sup Lat">
+                                    </div>
+                                    <div class="form-group col-sm-6 col-lg-3">
+                                        <input type="text" class="form-control parameter" placeholder="Dir Sup Lat">
+                                    </div>
+                                    <div class="form-group col-sm-6 col-lg-3">
+                                        <input type="text" class="form-control parameter" placeholder="Dir Inf Lat">
+                                    </div>
+                                    <div class="form-group col-sm-6 col-lg-3">
+                                        <input type="text" class="form-control parameter" placeholder="Esq Inf Lat">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="alert alert-danger d-none invalid-value" >
+                            <button type="button" class="close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <strong>Dígite um valor válido</strong>
+                        </div>
+                    </div>
+                    <div class="border-radius"></div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <textarea class="form-control" id="output" rows="6" readonly></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        navsTabs = document.querySelectorAll('.nav-tabs');
+        navsTabs.forEach(navTabs => {
+            panels = document.querySelector('#'+navTabs.id+'Content');
+            tabs = navTabs.querySelectorAll('.nav-item .nav-link');
+            tabs.forEach(tab => {
+                tab.onclick = () => {
+                    tabs.forEach(tab => {tab.classList.remove('active')});
+                    tab.classList.add('active');
+                    panels.querySelectorAll('.tab-pane').forEach(panel => {
+                        panel.classList.remove('show');
+                        panel.classList.remove('active');
+                    });
+                    panel = panels.querySelector(tab.attributes.href.value);
+                    panel.classList.add('show');
+                    panel.classList.add('active');
+
+                }
+            });
+        });
+
+        alerts = document.querySelectorAll('.alert');
+        alerts.forEach(alert => {
+            alert.querySelector('.close').onclick = () => {
+                alert.classList.add('d-none');
+            }
+            alert.show = () => {
+                if (alert.classList.contains('d-none')) {
+                    alert.classList.remove('d-none');
+                    setTimeout(() => {
+                        alert.classList.add('d-none');
+                    }, 4000);
+                }
+            }
+        })
+
+        parseValues = values => {
+            value = values.join(' ');
+            if (values.length == 8) {
+                value = values.slice(0,4).join(' ')+' / '+values.slice(4).join(' ');
+            }
+            return value;
+        }
+
+        output = document.querySelector('#output');
+        output.setValue = values => {
+            value = parseValues(values);
+            output.value = "<style>\n\t.border-radius {\n\t\tborder-radius: " + value + ";\n\t}\n</style>";
+        }
+        output.setValue([0]);
+
+        square = document.querySelector('.border-radius');
+        square.setBorderRadius = values => {
+            value = parseValues(values);
+            square.style.borderRadius = value
+        };
+        square.setBorderRadius([0]);
+
+        inputs = document.querySelectorAll('.parameter');
+        inputs.forEach(input => {
+            input.onchange = () => {
+                if (!input.value.match(/^(\d+)(\.\d+)?(cm|mm|in|px|pt|pc|em|ex|ch|rem|vw|vh|vmin|vmax|%)$/)) {
+                    document.querySelector('.invalid-value').show();
+                    return;
+                }
+                inputs = input.parentElement.parentElement.parentElement.querySelectorAll('.parameter');
+                values = [];
+                inputs.forEach(input => { values.push(input.value) });
+                output.setValue(values);
+                square.setBorderRadius(values);
+            }
+        });
+    </script>
+</body>
+
+</html>
