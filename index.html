@@ -94,17 +94,17 @@
                                         <div class="row tab-pane fade show active" id="oneParameter" role="tabpanel"
                                             aria-labelledby="oneParameter-tab">
                                             <div class="form-group col-12">
-                                                <input type="text" class="form-control parameter" placeholder="Geral">
+                                                <input type="range" min="0" max="50" step="0.1" value="0" class="form-control parameter" placeholder="Geral">
                                             </div>
                                         </div>
                                         <div class="row tab-pane fade" id="twoParameters" role="tabpanel"
                                             aria-labelledby="twoParameters-tab">
                                             <div class="row">
                                                 <div class="form-group col-sm-6">
-                                                    <input type="text" class="form-control parameter" placeholder="Esq Sup + Dir Inf">
+                                                    <input type="range" min="0" max="100" step="0.1" value="0" class="form-control parameter" placeholder="Esq Sup + Dir Inf">
                                                 </div>
                                                 <div class="form-group col-sm-6">
-                                                    <input type="text" class="form-control parameter" placeholder="Dir Sup + Esq Inf">
+                                                    <input type="range" min="0" max="100" step="0.1" value="0" class="form-control parameter" placeholder="Dir Sup + Esq Inf">
                                                 </div>
                                             </div>
                                         </div>
@@ -112,16 +112,16 @@
                                             aria-labelledby="fourParameters-tab">
                                             <div class="row">
                                                 <div class="form-group col-sm-6 col-lg-3">
-                                                    <input type="text" class="form-control parameter" placeholder="Esq Sup">
+                                                    <input type="range" min="0" max="100" step="0.1" value="0" class="form-control parameter" placeholder="Esq Sup">
                                                 </div>
                                                 <div class="form-group col-sm-6 col-lg-3">
-                                                    <input type="text" class="form-control parameter" placeholder="Dir Sup">
+                                                    <input type="range" min="0" max="100" step="0.1" value="0" class="form-control parameter" placeholder="Dir Sup">
                                                 </div>
                                                 <div class="form-group col-sm-6 col-lg-3">
-                                                    <input type="text" class="form-control parameter" placeholder="Dir Inf">
+                                                    <input type="range" min="0" max="100" step="0.1" value="0" class="form-control parameter" placeholder="Dir Inf">
                                                 </div>
                                                 <div class="form-group col-sm-6 col-lg-3">
-                                                    <input type="text" class="form-control parameter" placeholder="Esq Inf">
+                                                    <input type="range" min="0" max="100" step="0.1" value="0" class="form-control parameter" placeholder="Esq Inf">
                                                 </div>
                                             </div>
                                         </div>
@@ -129,28 +129,28 @@
                                             aria-labelledby="eightParameters-tab">
                                             <div class="row">
                                                 <div class="form-group col-sm-6 col-lg-3">
-                                                    <input type="text" class="form-control parameter" placeholder="Esq Sup Sup">
+                                                    <input type="range" min="0" max="100" step="0.1" value="0" class="form-control parameter" placeholder="Esq Sup Sup">
                                                 </div>
                                                 <div class="form-group col-sm-6 col-lg-3">
-                                                    <input type="text" class="form-control parameter" placeholder="Dir Sup Sup">
+                                                    <input type="range" min="0" max="100" step="0.1" value="0" class="form-control parameter" placeholder="Dir Sup Sup">
                                                 </div>
                                                 <div class="form-group col-sm-6 col-lg-3">
-                                                    <input type="text" class="form-control parameter" placeholder="Dir Inf Inf">
+                                                    <input type="range" min="0" max="100" step="0.1" value="0" class="form-control parameter" placeholder="Dir Inf Inf">
                                                 </div>
                                                 <div class="form-group col-sm-6 col-lg-3">
-                                                    <input type="text" class="form-control parameter" placeholder="Esq Inf Inf">
+                                                    <input type="range" min="0" max="100" step="0.1" value="0" class="form-control parameter" placeholder="Esq Inf Inf">
                                                 </div>
                                                 <div class="form-group col-sm-6 col-lg-3">
-                                                    <input type="text" class="form-control parameter" placeholder="Esq Sup Lat">
+                                                    <input type="range" min="0" max="100" step="0.1" value="0" class="form-control parameter" placeholder="Esq Sup Lat">
                                                 </div>
                                                 <div class="form-group col-sm-6 col-lg-3">
-                                                    <input type="text" class="form-control parameter" placeholder="Dir Sup Lat">
+                                                    <input type="range" min="0" max="100" step="0.1" value="0" class="form-control parameter" placeholder="Dir Sup Lat">
                                                 </div>
                                                 <div class="form-group col-sm-6 col-lg-3">
-                                                    <input type="text" class="form-control parameter" placeholder="Dir Inf Lat">
+                                                    <input type="range" min="0" max="100" step="0.1" value="0" class="form-control parameter" placeholder="Dir Inf Lat">
                                                 </div>
                                                 <div class="form-group col-sm-6 col-lg-3">
-                                                    <input type="text" class="form-control parameter" placeholder="Esq Inf Lat">
+                                                    <input type="range" min="0" max="100" step="0.1" value="0" class="form-control parameter" placeholder="Esq Inf Lat">
                                                 </div>
                                             </div>
                                         </div>
@@ -303,6 +303,10 @@
         })
 
         parseValues = values => {
+            values.forEach((value,i) => {
+                value += '';
+                if (value.match(/^[\d\.]*$/)) values[i] += '%';
+            })
             value = values.join(' ');
             if (values.length == 8) {
                 value = values.slice(0,4).join(' ')+' / '+values.slice(4).join(' ');
@@ -327,12 +331,12 @@
         inputs = document.querySelectorAll('.parameter');
         inputs.forEach(input => {
             input.onchange = () => {
-                if (!input.value.match(/^(\d+)(\.\d+)?(cm|mm|in|px|pt|pc|em|ex|ch|rem|vw|vh|vmin|vmax|%)$/)) {
+                if (!input.value.match(/^((\d+)(\.\d+)?(cm|mm|in|px|pt|pc|em|ex|ch|rem|vw|vh|vmin|vmax|%)?\s?)+$/)) {
                     document.querySelector('.invalid-value').show();
                     return;
                 }
-                inputs = input.parentElement.parentElement.parentElement.querySelectorAll('.parameter');
-                values = [];
+                let inputs = input.parentElement.parentElement.querySelectorAll('.parameter');
+                let values = [];
                 inputs.forEach(input => { values.push(input.value) });
                 output.setValue(values);
                 square.setBorderRadius(values);
